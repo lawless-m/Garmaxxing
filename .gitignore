@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Rust
+target/
+
+# Data-pipeline working files and large artefacts (built on the Xeon)
+data/vendor/
+data/data/
+data/out/
+*.pmtiles
+*.osm.pbf
+*.sqlite
+
+# Editor / OS
+.DS_Store
+*.swp

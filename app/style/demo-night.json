@@ -1,0 +1,29 @@
+{
+  "version": 8,
+  "name": "Garmaxxing Demo Night",
+  "metadata": {
+    "garmaxxing:theme": "night",
+    "garmaxxing:note": "Dev-only raster style. Needs network. Production uses night.json over gb.pmtiles."
+  },
+  "sources": {
+    "osm": {
+      "type": "raster",
+      "tiles": ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+      "tileSize": 256,
+      "attribution": "© OpenStreetMap contributors"
+    }
+  },
+  "layers": [
+    { "id": "background", "type": "background", "paint": { "background-color": "#10141c" } },
+    {
+      "id": "osm",
+      "type": "raster",
+      "source": "osm",
+      "paint": {
+        "raster-brightness-max": 0.55,
+        "raster-saturation": -0.4,
+        "raster-contrast": 0.1
+      }
+    }
+  ]
+}

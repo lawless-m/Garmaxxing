@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Garmaxxing</title>
+    <link rel="stylesheet" href="./src/ui/style.css" />
+  </head>
+  <body>
+    <div id="map" aria-label="Moving map"></div>
+
+    <!-- Glanceable HUD: silent nav carries everything on the screen. -->
+    <div id="hud" class="hud">
+      <div id="gps-state" class="gps-state" data-state="acquiring">Acquiring GPS…</div>
+      <div class="readouts">
+        <div class="readout speed"><span id="speed-value">—</span><span class="unit">mph</span></div>
+        <div class="readout road"><span id="road-name">—</span></div>
+      </div>
+    </div>
+
+    <!-- North reference marker; the map rotates track-up beneath it. -->
+    <div id="north-pip" class="north-pip" title="North">N</div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

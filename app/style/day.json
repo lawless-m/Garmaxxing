@@ -1,0 +1,67 @@
+{
+  "version": 8,
+  "name": "Garmaxxing Day",
+  "metadata": { "garmaxxing:theme": "day" },
+  "glyphs": "/fonts/{fontstack}/{range}.pbf",
+  "sprite": "/sprites/garmaxxing",
+  "sources": {
+    "gb": {
+      "type": "vector",
+      "url": "pmtiles:///maps/gb.pmtiles"
+    }
+  },
+  "layers": [
+    { "id": "background", "type": "background", "paint": { "background-color": "#e9e6df" } },
+    {
+      "id": "landcover",
+      "type": "fill",
+      "source": "gb",
+      "source-layer": "landcover",
+      "paint": { "fill-color": "#d6e3c8", "fill-opacity": 0.6 }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "gb",
+      "source-layer": "water",
+      "paint": { "fill-color": "#a6c8e8" }
+    },
+    {
+      "id": "road-minor",
+      "type": "line",
+      "source": "gb",
+      "source-layer": "transportation",
+      "filter": ["in", "class", "minor", "service", "track"],
+      "paint": { "line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 12, 0.5, 18, 6] }
+    },
+    {
+      "id": "road-secondary",
+      "type": "line",
+      "source": "gb",
+      "source-layer": "transportation",
+      "filter": ["in", "class", "secondary", "tertiary"],
+      "paint": { "line-color": "#fdf3c9", "line-width": ["interpolate", ["linear"], ["zoom"], 10, 1, 18, 10] }
+    },
+    {
+      "id": "road-primary",
+      "type": "line",
+      "source": "gb",
+      "source-layer": "transportation",
+      "filter": ["in", "class", "primary", "trunk", "motorway"],
+      "paint": { "line-color": "#f6c87a", "line-width": ["interpolate", ["linear"], ["zoom"], 8, 1, 18, 14] }
+    },
+    {
+      "id": "road-label",
+      "type": "symbol",
+      "source": "gb",
+      "source-layer": "transportation_name",
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": ["get", "name"],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 12
+      },
+      "paint": { "text-color": "#33312c", "text-halo-color": "#ffffff", "text-halo-width": 1.5 }
+    }
+  ]
+}

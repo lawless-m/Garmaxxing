@@ -1,0 +1,16 @@
+[package]
+name = "postcode-loader"
+version = "0.1.0"
+edition = "2021"
+description = "Convert OS Code-Point Open (eastings/northings) to a WGS84 postcode SQLite table for Garmaxxing"
+
+[[bin]]
+name = "postcode-loader"
+path = "src/main.rs"
+
+[dependencies]
+# Bundled SQLite so the loader is self-contained (no system sqlite needed).
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+[profile.release]
+opt-level = 3

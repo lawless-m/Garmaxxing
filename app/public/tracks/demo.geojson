@@ -1,0 +1,28 @@
+{
+  "type": "Feature",
+  "properties": {
+    "name": "Demo loop near Sheffield",
+    "note": "Synthetic track for the GPS simulator: straights, a sweeping bend and two sharp turns to exercise heading smoothing and track-up rotation."
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [-1.500, 53.000],
+      [-1.500, 53.006],
+      [-1.500, 53.012],
+      [-1.499, 53.0145],
+      [-1.497, 53.0162],
+      [-1.494, 53.0172],
+      [-1.490, 53.0176],
+      [-1.482, 53.0176],
+      [-1.474, 53.0176],
+      [-1.474, 53.0136],
+      [-1.474, 53.0096],
+      [-1.474, 53.0056],
+      [-1.480, 53.0040],
+      [-1.486, 53.0028],
+      [-1.492, 53.0016],
+      [-1.500, 53.000]
+    ]
+  }
+}

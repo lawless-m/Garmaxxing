@@ -1,0 +1,114 @@
+/* Fullscreen kiosk: the map fills the screen, the HUD floats over it. */
+:root {
+  color-scheme: dark;
+  --hud-fg: #f5f5f5;
+  --hud-bg: rgba(0, 0, 0, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+}
+
+/* Vehicle marker: a bold chevron pointing up (track-up). */
+.vehicle-marker svg {
+  fill: #2f80ed;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+}
+
+/* HUD */
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gps-state {
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--hud-bg);
+  color: var(--hud-fg);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.gps-state[data-state="lost"] {
+  background: rgba(150, 30, 30, 0.7);
+}
+
+.readouts {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.readout {
+  background: var(--hud-bg);
+  color: var(--hud-fg);
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.readout.speed {
+  font-variant-numeric: tabular-nums;
+}
+
+.readout.speed #speed-value {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.readout.speed .unit {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+  opacity: 0.8;
+}
+
+.readout.road {
+  font-size: 1.25rem;
+  font-weight: 600;
+  max-width: 50vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* North reference: small fixed pip, top-right, so track-up still orients you. */
+.north-pip {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--hud-bg);
+  color: var(--hud-fg);
+  font-weight: 700;
+  pointer-events: none;
+}

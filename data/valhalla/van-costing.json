@@ -1,0 +1,26 @@
+{
+  "_comment": [
+    "Van routing profile for Garmaxxing. The app merges these costing_options",
+    "into every Valhalla /route request. Uses the 'truck' costing so height,",
+    "weight, length and width restrictions are respected.",
+    "",
+    "MEASURE THE REAL VAN, including roof box, vents and aerials — not the",
+    "brochure figure. Units: metres for dimensions, tonnes for weight.",
+    "",
+    "This is a strong safety net, not a guarantee: it is only as good as OSM's",
+    "maxheight/maxweight tagging. Always obey the physical signs."
+  ],
+  "costing": "truck",
+  "costing_options": {
+    "truck": {
+      "height": 2.90,
+      "width": 2.10,
+      "length": 5.40,
+      "weight": 3.20,
+      "axle_load": 2.0,
+      "hazmat": false,
+      "use_highways": 1.0,
+      "use_tolls": 1.0
+    }
+  }
+}
