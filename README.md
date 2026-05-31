@@ -42,7 +42,9 @@ is a working artefact on its own.
       track-up follow camera, heading smoothing with low-speed freeze, day/night
       themes. Runs against a GPS simulator on a workstation or real gpsd in the
       van. → [`app/`](app/)
-- [ ] Slice 2 — Route line (favourites + postcode → Valhalla → drawn route)
+- [x] **Slice 2 — Route line.** Keyboard destination chooser (favourites +
+      postcode lookup), Valhalla van-profile routing (or a demo router), the
+      route line drawn over the map with a distance/ETA banner. → [`app/`](app/)
 - [ ] Slice 3 — Distance-to-turn + approach-state junction zoom (ferrostar)
 - [ ] Slice 4 — Auto-rerouting on off-route
 - [ ] Slice 5 — Polish

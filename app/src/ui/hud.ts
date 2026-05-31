@@ -8,10 +8,22 @@ import { speedMph } from '../units';
 export class Hud {
   private readonly gpsStateEl: HTMLElement;
   private readonly speedEl: HTMLElement;
+  private readonly noticeEl: HTMLElement;
 
   constructor(root: Document = document) {
     this.gpsStateEl = mustGet(root, 'gps-state');
     this.speedEl = mustGet(root, 'speed-value');
+    this.noticeEl = mustGet(root, 'notice');
+  }
+
+  /** Transient status line: "Routing…", error text, etc. */
+  setNotice(text: string): void {
+    this.noticeEl.textContent = text;
+    this.noticeEl.hidden = false;
+  }
+
+  clearNotice(): void {
+    this.noticeEl.hidden = true;
   }
 
   setGpsState(state: GpsState): void {
